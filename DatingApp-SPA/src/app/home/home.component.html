@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div *ngIf="!this.authService.decodedToken" class="container mt-5">
   <div *ngIf="!registerMode" style="text-align: center">
     <h1>Find your match</h1>
     <p class="lead">Come on in to view your matches... All you need to do is sign up!</p>
@@ -14,5 +14,12 @@
         <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
       </div>
     </div>
+  </div>
+</div>
+<div *ngIf="this.authService.decodedToken">
+  <div class="container mt-5 text-center">
+    <h1 class="mx-auto my-0" style="color: coral; font-size: 6.5rem; line-height: 6.5rem; letter-spacing: .8rem;">
+      Made in heaven
+    </h1>
   </div>
 </div>
