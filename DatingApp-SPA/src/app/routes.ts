@@ -15,7 +15,7 @@ import { MessagesResolver } from './_resolvers/messages.resolver';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 
 export const appRoutes: Routes = [
-    {path: 'home', component: HomeComponent},
+    {path: '', component: HomeComponent},
     {
         path: '', // keep this as empty string, or it will prefixed on other paths.
         runGuardsAndResolvers: 'always',
@@ -32,5 +32,5 @@ export const appRoutes: Routes = [
             {path: 'admin', component: AdminPanelComponent, data: {roles: ['Admin', 'Moderator']}},
         ]
     },
-    {path: '**', redirectTo: 'home', pathMatch: 'full'}
+    {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
